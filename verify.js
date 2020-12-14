@@ -3,7 +3,7 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 
-const completemsg = `Thank you for agreeing to the rules and code of conduct! You are now a verified member of the guild! \nFeel free to choose what roles you’d like, introduce yourself or check out a our other channels. \n\n**Your unique token is your signature that you have read and understood our rules.**\n`
+const completemsg = `T규칙과 행동 강령에 동의 해 주셔서 감사합니다! 이제 확인 된 길드원이되었습니다! \ n 원하는 역할을 자유롭게 선택하거나 자신을 소개하거나 다른 채널을 확인하세요. \ n \ n ** 귀하의 고유 토큰은 귀하가 당사의 규칙을 읽고 이해 한 서명입니다.**\n`
 
 const shortcode = (n) => {
     const possible = 'ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz0123456789'
@@ -22,7 +22,7 @@ client.on('ready', () => {
 client.on('guildMemberAdd', (member) => {
     if (member.user.bot || member.guild.id !== config.guild) return
     const token = shortcode(8)
-    const welcomemsg = `Welcome to the guild! We hope you find a home here! Check out the \`#general\` channel to make sure that we jive, and as long as our goals are similar, then there’s a place at the table waiting for you. \n\n If you accept the code of conduct, please verify your agreement by replying to **this DM** with the verification phrase: \n\n\`I agree to abide by all rules. My token is ${token}.\`\n\n **This message is case-sensitive, and please include the period at the end! ** \n\nQuestions? Get at a staff member in the server or via DM.`
+    const welcomemsg = `서버에 오신 것을 환영합니다! 여기서 규칙을 찾으시기 바랍니다! \`#general \`채널을 확인하여 우리가 활기를 띠고 있는지 확인하세요. 목표가 비슷하다면 테이블에서 여러분을 기다리고있는 자리가 있습니다. \ n \ n 행동 강령에 동의하면 **이 DM **에 확인 문구와 함께 답장하여 동의를 확인하세요. \ n \ n \`모든 규칙을 준수 할 것에 동의합니다. 내 토큰은 $ {token}입니다. \`\ n \ n **이 메시지는 대소 문자를 구분하며 끝에 마침표를 포함하세요! ** \ n \ n 질문이 있으십니까? 서버 또는 DM을 통해 직원에게 문의하십시오.`
     console.log(`${member.user.username}#${member.user.discriminator} joined! CODE: "${token}"`)
     member.send(welcomemsg)
     member.user.token = token
