@@ -1,0 +1,14 @@
+{
+  "name":"basicverify",
+  "version":"1.0.2",
+  "description":"Super basic verification bot for Discord",
+  "main":"verify.js",
+  "author":".vlexar#0001",
+  "license":"Unlicense",
+  "engines":{
+    "node":">=10.0.0"
+  },
+  "dependencies":{
+    "discord.js":"discordjs/discord.js"
+  }
+} 
